@@ -1,39 +1,44 @@
-package com.hillel.kryvoshei.homework.homework5;
+package com.hillel.kryvoshei.homework.homework8;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /*За владу в стародавньому Китаї боролися дві династії: Лі та Мінь.
+//        Зробити гру, в якій потрібно відгадати ціле число, яке "загадав" комп'ютер у діапазоні від 0 до 10
+//        Користувач повинен мати можливість вгадувати в кілька спроб (мінімум 3).
+        Scanner greet = new Scanner(System.in);
+        System.out.print("That's a game where you need to guess number from 0 to 10. Would you try to?:");
+        String word = greet.nextLine();
+        switch (word) {
+            case "No":
+                System.out.print("Then good next time visit!");
+                break;
 
-З кожного боку боролися 3 типи воїнів з такими показниками атаки:
-Лі:
+            case "Yes":
+                System.out.print("Shall the game begin! What number?:");
+                int count = greet.nextInt();
+                int a = 0;
+                int b = 10;
+                int random_number = a + (int) (Math.random() * b);
+                for (int i = 1; i < 6; i++) {
+                    if (random_number > count) {
+                        System.out.println("Thou art wrong! My number > of yours");
+                        System.out.print("What number?: ");
+                        count = greet.nextInt();
 
-воїн - 13
-лучник - 24
-вершник - 46
 
-Мінь:
+                    } else if (random_number < count) {
+                        System.out.println("Thou art wrong! My number < of yours");
+                        System.out.print("What number?:");
+                         count = greet.nextInt();
 
-воїн - 9
-лучник - 35
-вершник - 12
-Розрахувати: загальний показник атаки для обох династій, якщо відомо,
-що воїнів династії Лі кожного типу було 860, а кількість воїнів династії Мінь
-кожного типу в півтора рази більша.
+                    } else {
+                        System.out.println("HURAY, THOU'VE DONE IT! " + random_number);
+                        break;
+                    }
+                }
+        }
 
-Вивести в консоль значення загальної атаки кожної армії;
 
-*/
-        int lisaber = 13*860;
-        int liarcher = 24*860;
-        int lirider = 46*860;
-
-        double minsaber = 9*860*1.5;
-        double minarcher = 35*860*1.5;
-        double minrider = 12*860*1.5;
-
-        double litotalattack = liarcher + lirider + lisaber;
-        double mintotalattack =  minarcher + minsaber + minrider;
-        System.out.println("Min total:"+ (int)mintotalattack);
-        System.out.println("Li total:"+ (int)litotalattack);
     }
 }
