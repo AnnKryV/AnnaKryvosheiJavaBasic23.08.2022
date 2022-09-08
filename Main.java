@@ -7,7 +7,7 @@ public class Main {
 //        Зробити гру, в якій потрібно відгадати ціле число, яке "загадав" комп'ютер у діапазоні від 0 до 10
 //        Користувач повинен мати можливість вгадувати в кілька спроб (мінімум 3).
         Scanner greet = new Scanner(System.in);
-        System.out.print("That's a game where you need to guess number from 0 to 10. Would you try to?:");
+        System.out.print("That's a game where you need to guess number from 0 to 10. Would you try to?(Yes or No):");
         String word = greet.nextLine();
         switch (word) {
             case "No":
